@@ -1,0 +1,16 @@
+{
+  "name": "@gray-adeyi/korapay-vue",
+  "description": "",
+  "version": "0.1.0",
+  "author": "Gbenga Adeyi <adeyigbenga005@gmail.com>",
+  "exports": "./dist/korapay-vue.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "tasks": {
+    "build": "deno run -A build"
+  },
+  "imports": {
+    "vue": "npm:vue@3.5.13",
+    "@deno/dnt": "jsr:@deno/dnt@^0.41.3"
+  }
+}
