@@ -8,7 +8,8 @@
   "types": "dist/korapay-vue.es.d.ts",
   "type": "module",
   "exports": {
-    ".":{"import": "./dist/korapay-vue.es.js"}
+    ".":{"import": "./dist/korapay-vue.es.js"},
+    "./styles": "./dist/korapay-vue.css"
   },
   "files": ["dist","README.md","LICENSE","package.json"],
   "scripts": {
