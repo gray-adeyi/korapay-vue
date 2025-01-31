@@ -1,6 +1,6 @@
 # @gray-adeyi/korapay-vue
 
-A Vue plugin for Korapay integration. 
+A Vue plugin for Korapay integration.
 
 ## Features
 
@@ -71,7 +71,8 @@ Use the `KorapayButton` component where payment needs to be initiated.
 ```vue
 // File src/App.vue
 <script setup lang="ts">
-  import {KorapayButton,Currency, type InitializePayload,  type Customer} from "@gray-adeyi/korapay-vue";
+  import {Currency, type InitializePayload,  type Customer} from "@gray-adeyi/korapay-vue";
+  import '@gray-adeyi/korapay-vue/styles'// Import default Korapay Button styling
   import {computed, ref} from "vue";
 
   const amount = ref(1000)
@@ -122,9 +123,11 @@ Use the `KorapayButton` component where payment needs to be initiated.
 <style scoped>
 </style>
 ```
-The example above show three variations of using the `KorapayButton` component. The first uses the default button
-styling and button text, the second updates the default button text and the third uses your button instead. This
-makes it the most preferred variant when you need a button with your styling.
+
+The example above show three variations of using the `KorapayButton` component.
+The first uses the default button styling and button text, the second updates
+the default button text and the third uses your button instead. This makes it
+the most preferred variant when you need a button with your styling.
 
 ## API Reference
 

@@ -5,23 +5,28 @@ import dts from "vite-plugin-dts";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), svgLoader(), dts({
-    insertTypesEntry:true,
-  })],
+  plugins: [
+    vue(),
+    svgLoader(),
+    dts({
+      tsconfigPath: "./tsconfig.app.json",
+      insertTypesEntry: true,
+    }),
+  ],
   build: {
     lib: {
       entry: "./mod.ts",
       name: "@gray-adeyi/korapay-vue",
-      formats: ['es'],
+      formats: ["es"],
       fileName: (format) => `korapay-vue.${format}.js`,
     },
-    rollupOptions:{
+    rollupOptions: {
       external: ["vue"],
       output: {
         globals: {
-          vue: "Vue"
-        }
-      }
+          vue: "Vue",
+        },
+      },
     },
-  }
+  },
 });

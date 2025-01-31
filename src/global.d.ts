@@ -1,7 +1,7 @@
 export {};
 
 declare global {
-    interface Window {
-        readonly Korapay: KorapayScriptAPI;
-    }
+  interface Window {
+    readonly Korapay: KorapayScriptAPI;
+  }
 }
