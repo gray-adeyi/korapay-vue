@@ -120,9 +120,9 @@ Use the `KorapayButton` component where payment needs to be initiated.
 </style>
 ```
 
-The example above show three variations of using the `KorapayButton` component.
+The example above shows three variations of using the `KorapayButton` component.
 The first uses the default button styling and button text, the second updates
-the default button text and the third uses your button instead. This makes it
+the default button text, and the third uses your button instead. This makes it
 the most preferred variant when you need a button with your styling.
 
 ## API Reference
@@ -132,13 +132,13 @@ Coming soon...
 ## Sponsorship
 
 Every little donation goes a long way. You can also give this project a star in
-its Github repository it helps ♥️
+its GitHub repository it helps ♥️
 
-- [Star on Github](https://www.github.com/gray-adeyi/korapay-vue)
+- [Star on GitHub](https://www.github.com/gray-adeyi/korapay-vue)
 - [Buy me a coffee](https://www.buymeacoffee.com/jigani)
 
 ## Contributing
 
 You might encounter bugs while using this project or have feature enhancements
 you'd like to share with the project. Create an issue on the project's
-[github](https://www.github.com/gray-adeyi/korapay-vue) page.
+[GitHub](https://www.github.com/gray-adeyi/korapay-vue) page.
