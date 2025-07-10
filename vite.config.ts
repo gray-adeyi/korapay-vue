@@ -9,6 +9,7 @@ export default defineConfig({
     vue(),
     svgLoader(),
     dts({
+      rollupTypes: true,
       tsconfigPath: "./tsconfig.app.json",
       insertTypesEntry: true,
     }),
