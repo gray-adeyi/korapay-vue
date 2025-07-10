@@ -8,10 +8,17 @@
   "types": "dist/korapay-vue.es.d.ts",
   "type": "module",
   "exports": {
-    ".": { "import": "./dist/korapay-vue.es.js" },
+    ".": {
+      "import": "./dist/korapay-vue.es.js"
+    },
     "./styles": "./dist/korapay-vue.css"
   },
-  "files": ["dist", "README.md", "LICENSE", "package.json"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
@@ -19,12 +26,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gray-adeyi/korapay-vue"
+    "url": "git+https://github.com/gray-adeyi/korapay-vue.git"
   },
   "bugs": {
     "url": "https://github.com/gray-adeyi/korapay-vue/issues"
   },
-  "keywords": ["vue", "plugin", "korapay", "vue3"],
+  "keywords": [
+    "vue",
+    "plugin",
+    "korapay",
+    "vue3"
+  ],
   "dependencies": {
     "@fontsource/roboto": "^5.1.1",
     "vue": "^3.5.17"
