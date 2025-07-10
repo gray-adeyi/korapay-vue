@@ -6,6 +6,9 @@ import type {
   KorapayScriptInitializePayload,
 } from "../types.ts";
 
+const COLLECTION_SCRIPT_URL =
+    "https://korablobstorage.blob.core.windows.net/modal-bucket/korapay-collections.min.js";
+
 export default function () {
   const korapay = inject<KorapayContextAPI>(KORAPAY_CONTEXT_KEY);
 
@@ -15,9 +18,10 @@ export default function () {
         "Unable to inject korapay context API. Please ensure that the plugin was properly installed",
       );
     }
+    await loadCollectionScript();
     const finalPayload: KorapayScriptInitializePayload = {
       ...payload,
-      key: korapay.config.publicKey!,
+      key: korapay.config.publicKey as string,
       currency: payload.currency || korapay.config.currency,
       notificationUrl: payload.notificationUrl ||
         korapay.config.notificationUrl,
@@ -31,4 +35,33 @@ export default function () {
   return {
     initPayWithKora,
   };
+}
+
+function loadCollectionScript(): Promise<undefined> {
+  return new Promise((resolve, reject) => {
+    const existingScript = document.querySelector(
+        `script[src="${COLLECTION_SCRIPT_URL}"]`,
+    );
+    if (existingScript) {
+      resolve(undefined);
+    }
+
+    const script = document.createElement("script");
+    script.src = COLLECTION_SCRIPT_URL;
+    script.async = true;
+
+    script.onload = () => {
+      resolve(undefined);
+    };
+
+    script.onerror = () => {
+      reject(
+          new Error(
+              `Failed to load korapay collection script: ${COLLECTION_SCRIPT_URL}`,
+          ),
+      );
+    };
+
+    document.head.appendChild(script);
+  });
 }
