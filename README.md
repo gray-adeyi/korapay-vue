@@ -46,24 +46,20 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { initKorapay } from "@gray-adeyi/korapay-vue";
 
-// The `initKorapay` function returns  a promise that resolve to a plugin that loads Korapay pay-in/collection script
-// and registers the `KorapayButton` component to your project, hence the reason for re-writing it like so. The
-// `initKorapay` function takes in a config with a type definition of `KorapayInitConfig` which let's you configure
-// korapay with your publicKey, currency, notificationUrl e.t.c. an empty object may passed as seen below if your
-// korapay's integration public key is set in your environmental variables as `VITE_KORAPAY_PUBLIC_KEY`. In a situation
-// where this environmental variable is set and a publicKey is provided in the configs, the publicKey in the configs
-// takes presedence.
-(async () => {
-  const app = createApp(App);
+// The `initKorapay` function returns  a plugin that provides the KorapayCotextAPI context and also registers the 
+// `KorapayButton` component to your project. The `initKorapay` function takes in an optional config with a type 
+// definition of `KorapayInitConfig` which let's you configure korapay with your publicKey, currency, notificationUrl 
+// e.t.c. You don't need to provide this optional config if your korapay's integration public key is set in your 
+// environmental variables as `VITE_KORAPAY_PUBLIC_KEY`. In a situation where this environmental variable is set and 
+// a publicKey is provided in the configs, the publicKey in the configs takes precedence.
 
-  // Wait for the plugin to resolve
-  const korapay = await initKorapay({});
+const app = createApp(App);
 
-  // Use the resolved plugin
-  app.use(korapay);
-
-  app.mount("#app");
-})();
+// Initialize korapay plugin
+const korapay = initKorapay(); // You may choose to provide additional configs.
+// Use the plugin
+app.use(korapay);
+app.mount("#app");
 ```
 
 Use the `KorapayButton` component where payment needs to be initiated.
